@@ -1,0 +1,70 @@
+﻿@page
+@model optimization.Pages.Order.DetailsModel
+@{
+}
+<h1>Details</h1>
+
+<div>
+    <h4>OrderModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(Model => Model.Product.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(Model => Model.Product.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(Model => Model.Order.NumberOfProducts)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(Model => Model.Order.NumberOfProducts)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(Model => Model.Product.Price)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(Model => Model.Product.Price)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(Model => Model.Customer.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(Model => Model.Customer.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(Model => Model.Customer.Surname)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(Model => Model.Customer.Surname)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(Model => Model.Customer.PhoneNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(Model => Model.Customer.PhoneNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(Model => Model.Customer.Address)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(Model => Model.Customer.Address)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(Model => Model.Order.CourierCompany)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(Model => Model.Order.CourierCompany)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(Model => Model.Order.Date)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(Model => Model.Order.Date)
+        </dd>
+    </dl>
+</div>
+<div>
+     <a asp-page-handler="Edit" asp-route-id="@Model.Order.ID" asp-route-productID="@Model.Order.ProductID" asp-route-customerID="@Model.Order.CustomerID">Edit</a>
+    <a asp-page-handler="Index">Back to List</a>
+</div>

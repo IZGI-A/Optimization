@@ -1,0 +1,51 @@
+﻿@page
+@model optimization.Pages.Employee.EditModel
+@{
+}
+<h1>Edit</h1>
+
+<h4>EmployeeModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="@Model.Employee.ID" />
+            <div class="form-group">
+                <label asp-for="@Model.Employee.BranchID" class="control-label"></label>
+                <select asp-for="@Model.Employee.BranchID" asp-items="@Model.BranchIDs" class="form-select"></select>
+                <span asp-validation-for="@Model.Employee.BranchID" class="text-danger"></span>
+            </div>
+            &nbsp
+            <div class="form-group">
+                <label asp-for="@Model.Employee.Email" class="control-label"></label>
+                <input disabled asp-for="@Model.Employee.Email" class="form-control" />
+                <span asp-validation-for="@Model.Employee.Email" class="text-danger"></span>
+            </div>
+            &nbsp
+            <div class="form-group">
+                <label asp-for="@Model.Employee.Password" class="control-label"></label>
+                <input asp-for="@Model.Employee.Password" class="form-control" />
+                <span asp-validation-for="@Model.Employee.Password" class="text-danger"></span>
+            </div>
+            &nbsp
+            <div class="form-group">
+                <label asp-for="@Model.Employee.ConfirmPassword" class="control-label"></label>
+                <input asp-for="@Model.Employee.ConfirmPassword" class="form-control" />
+                <span asp-validation-for="@Model.Employee.ConfirmPassword" class="text-danger"></span>
+            </div>
+            &nbsp
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page-handler="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,89 @@
+﻿@page
+@model optimization.Pages.Account.IndexModel
+@{
+}
+
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Edit</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="failed-login" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Failed Login</button>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      &nbsp
+      <div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="@Model.Employee.ID" />
+            <div class="form-group">
+                <label asp-for="@Model.Employee.BranchID" class="control-label"></label>
+                <select asp-for="@Model.Employee.BranchID" asp-items="@Model.BranchIDs" class="form-select"></select>
+                <span asp-validation-for="@Model.Employee.BranchID" class="text-danger"></span>
+            </div>
+            &nbsp
+            <div class="form-group">
+                <label asp-for="@Model.Employee.Email" class="control-label"></label>
+                <input asp-for="@Model.Employee.Email" class="form-control" />
+                <span asp-validation-for="@Model.Employee.Email" class="text-danger"></span>
+                @if(@Model.message != null)
+                    {
+                        <span class="text-danger">@Model.message</span>
+                    }
+            </div>
+            &nbsp
+            <div class="form-group">
+                <label asp-for="@Model.Employee.Password" class="control-label"></label>
+                <input asp-for="@Model.Employee.Password" class="form-control" />
+                <span asp-validation-for="@Model.Employee.Password" class="text-danger"></span>
+            </div>
+            &nbsp
+            <div class="form-group">
+                <label asp-for="@Model.Employee.ConfirmPassword" class="control-label"></label>
+                <input asp-for="@Model.Employee.ConfirmPassword" class="form-control" />
+                <span asp-validation-for="@Model.Employee.ConfirmPassword" class="text-danger"></span>
+            </div>
+            &nbsp
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+  </div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      &nbsp
+      <table class="table">
+    <thead>
+        <tr>
+            <th>
+                Inputed Password
+            </th>
+            <th>
+                Date
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Data) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Time)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+  </div>
+</div>
+
+

@@ -1,0 +1,52 @@
+﻿@page
+@model optimization.Pages.Product.DetailsModel
+@{
+}
+<h1>Details</h1>
+
+<div>
+    <h4>ProductModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(Model => Model.Branch.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(Model => Model.Branch.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(Model => Model.Branch.PhoneNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(Model => Model.Branch.PhoneNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(Model => Model.Branch.Address)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(Model => Model.Branch.Address)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(Model => Model.Product.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(Model => Model.Product.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(Model => Model.Product.Price)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(Model => Model.Product.Price)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(Model => Model.Product.Amount)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(Model => Model.Product.Amount)
+        </dd>
+    </dl>
+</div>
+<div>
+     <a asp-page-handler="Edit" asp-route-id="@Model.Product.ID" asp-route-branchID="@Model.Product.BranchID">Edit</a>
+    <a asp-page-handler="Index">Back to List</a>
+</div>

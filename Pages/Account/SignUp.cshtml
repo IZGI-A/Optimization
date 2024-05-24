@@ -1,0 +1,73 @@
+﻿@page
+@model optimization.Pages.Account.SignUpModel
+@{
+}
+<style>
+        
+#videoDiv2 {width:100%; max-width:2400px; margin:auto; display:block; position: relative;} /* This has been changed */
+#video2{width:100%; height:auto } /* This has been changed */
+#videoMessage2 { position: absolute; top: 0; left: 0;
+display: flex;
+flex-direction: column; 
+justify-content: center;
+align-items: center; 
+width: 100%;
+height: 100%;}
+
+    </style>
+
+
+<div id="videoDiv2"> 
+<video src="https://static.videezy.com/system/resources/previews/000/039/580/original/Plexus-Background-White.mp4" autoplay loop playsinline muted></video>
+    <div id="videoMessage2" class="styling">
+        
+    <div class="content">
+<h1>Sign Up</h1>
+
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="@Model.Employee.Email" class="control-label">Email</label>
+                <input asp-for="@Model.Employee.Email" class="form-control" />
+                <span asp-validation-for="@Model.Employee.Email" class="text-danger"></span>
+                    @if(@Model.message != null)
+                    {
+                        <span class="text-danger">@Model.message</span>
+                    }
+                </div>
+            &nbsp
+            <div class="form-group">
+                <label asp-for="@Model.Employee.Password" class="control-label"></label>
+                <input asp-for="@Model.Employee.Password" class="form-control" />
+                <span asp-validation-for="@Model.Employee.Password" class="text-danger"></span>
+            </div>
+                        &nbsp
+
+            <div class="form-group">
+                <label asp-for="@Model.Employee.ConfirmPassword" class="control-label"></label>
+                <input asp-for="@Model.Employee.ConfirmPassword" class="form-control" />
+                <span asp-validation-for="@Model.Employee.ConfirmPassword" class="text-danger"></span>
+            </div>
+                        &nbsp
+
+            <div class="form-group">
+                <input type="submit" value="Register" class="btn btn-warning" />
+            </div>
+        </form>
+    </div>
+</div>
+</div> 
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+   $(document).ready(function () {
+      let msg = $('#StatusMessage').val();
+      if(msg.length > 0) {
+          swal.fire(msg);
+      }
+   }
+    </script>
+}

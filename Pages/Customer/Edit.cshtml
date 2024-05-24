@@ -1,0 +1,54 @@
+﻿@page
+@model optimization.Pages.Customer.EditModel
+@{
+}
+<h1>Edit Customer</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="@Model.Customer.ID" />
+            <div class="form-group">
+                <label asp-for="@Model.Customer.Name" class="control-label"></label>
+                <input asp-for="@Model.Customer.Name" class="form-control" />
+                <span asp-validation-for="@Model.Customer.Name" class="text-danger"></span>
+            </div>
+            &nbsp
+            <div class="form-group">
+                <label asp-for="@Model.Customer.Surname" class="control-label"></label>
+                <input asp-for="@Model.Customer.Surname" class="form-control" />
+                <span asp-validation-for="@Model.Customer.Surname" class="text-danger"></span>
+            </div>
+            &nbsp
+            <div class="form-group">
+                <label asp-for="@Model.Customer.Address" class="control-label"></label>
+                <textarea asp-for="@Model.Customer.Address" class="form-control"></textarea>
+                <span asp-validation-for="@Model.Customer.Address" class="text-danger"></span>
+            </div>
+            &nbsp
+            <div class="form-group">
+                <label asp-for="@Model.Customer.PhoneNumber" class="control-label"></label>
+                <input asp-for="@Model.Customer.PhoneNumber" class="form-control" />
+                <span asp-validation-for="@Model.Customer.PhoneNumber" class="text-danger"></span>
+            </div>
+            &nbsp
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<!--Google map-->
+<div id="map-container-google-3" class="z-depth-1-half map-container-3">
+  <iframe src="https://maps.google.com/maps?q=turkey&t=k&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+    style="border:0" allowfullscreen></iframe>
+</div>
+<div>
+     
+    <a asp-page-handler="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
