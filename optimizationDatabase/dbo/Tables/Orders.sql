@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[Orders]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	[Date] DATETIME NOT NULL,
+	[CargoID] INT NOT NULL FOREIGN KEY REFERENCES Cargoes([Id]), 
+    [Deleted] DATETIME NULL,
+)

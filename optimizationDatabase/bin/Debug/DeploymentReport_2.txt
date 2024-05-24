@@ -1,0 +1,31 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[Branch_Product] (Table)
+       [dbo].[Branches] (Table)
+       [dbo].[Cargoes] (Table)
+       [dbo].[Customers] (Table)
+       [dbo].[Employees] (Table)
+       [dbo].[Orders] (Table)
+       [dbo].[Product_Order] (Table)
+       [dbo].[Products] (Table)
+       [dbo].[Stocks] (Table)
+       Foreign Key: unnamed constraint on [dbo].[Branch_Product] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Branch_Product] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Employees] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Orders] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Product_Order] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Product_Order] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Product_Order] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Products] (Foreign Key)
+
+** Supporting actions

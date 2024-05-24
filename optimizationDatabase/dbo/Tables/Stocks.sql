@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Stocks]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	[Amount] INT NOT NULL, 
+    [Deleted] DATETIME NULL,
+)

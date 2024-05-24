@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[Products]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1), 
+    [Name] VARCHAR(64) NOT NULL, 
+    [Price] INT NOT NULL, 
+    [StockID] INT NOT NULL FOREIGN KEY REFERENCES Stocks([Id]), 
+    [Deleted] DATETIME NULL,
+)

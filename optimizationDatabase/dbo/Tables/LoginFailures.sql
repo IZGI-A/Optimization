@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[LoginFailures]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	[EmployeeEmail] VARCHAR(64) NOT NULL FOREIGN KEY REFERENCES Employees([Email]),
+	[Password] VARCHAR(10) NOT NULL,
+	[Time] DATETIME NOT NULL, 
+)
